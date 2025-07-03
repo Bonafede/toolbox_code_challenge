@@ -1,0 +1,23 @@
+# Etapa 1: correr tests del backend
+FROM node:14 AS backend-test
+WORKDIR /app
+COPY backend ./backend
+WORKDIR /app/backend
+RUN npm install
+RUN npm test
+
+# Etapa 2: correr tests del frontend
+FROM node:16 AS frontend-test
+WORKDIR /app
+COPY frontend ./frontend
+WORKDIR /app/frontend
+RUN npm install
+RUN npm test
+
+# Etapa 3: server Nginx
+FROM nginx:alpine AS reporter
+WORKDIR /usr/share/nginx/html
+COPY --from=backend-test /app/backend/test/report/ ./backend/
+COPY --from=frontend-test /app/frontend/test/report/ ./frontend/
+RUN mv ./backend/backend.html ./backend/index.html
+RUN mv ./frontend/frontend.html ./frontend/index.html

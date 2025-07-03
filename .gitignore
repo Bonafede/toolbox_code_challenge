@@ -1,0 +1,33 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# System
+.DS_Store
+Thumbs.db
+
+# Node modules (en root y subdirectorios)
+**/node_modules
+
+# Build output (como dist, build, etc.)
+**/dist
+**/build
+**/.next
+**/.turbo
+
+# Test coverage
+**/coverage
+**/test/report
+
+# Env files
+.env
+.env.*
+
+# IDEs / OS
+.vscode
+.idea
+*.swp
+*.swo
+
+

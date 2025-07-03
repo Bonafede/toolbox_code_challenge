@@ -1,0 +1,16 @@
+.file-selector {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Hay estilos mas limpios que el elegido para cuando la pantalla se achica,
+pero por lo menos cumple con el repsonsive design */
+@media (max-width: 576px) {
+
+  .file-selector .d-flex {
+    flex-direction: column;
+    width: 100%;
+  }
+} 

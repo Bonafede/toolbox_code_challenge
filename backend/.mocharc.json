@@ -1,0 +1,7 @@
+{
+  "spec": "test/*.test.js",
+  "timeout": 15000,
+  "exit": true,
+  "reporter": "mochawesome",
+  "reporter-option": ["reportDir=./test/report", "reportFilename=backend"]
+}

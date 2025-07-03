@@ -1,0 +1,27 @@
+networks:
+  toolbox-net:
+    driver: bridge
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    networks:
+      - toolbox-net
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3001:3001"
+    networks:
+      - toolbox-net
+
+  reporter:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    ports:
+      - "3002:80"
+    networks:
+      - toolbox-net
