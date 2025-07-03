@@ -26,4 +26,7 @@ Podes ver los test ya ejecutados en:
 
 #### Notas
 > El objetivo del `test-server` es permitir visualizar rápidamente el resultado de los tests.  
+
 > Sin embargo, este reporte debería generarse automáticamente como summary en cada Pull Request mediante GitHub Actions.
+
+> El docker esta destinado a ser simple y solo mostrar la solucion funcionando, por lo que no se instalo hot-reload ni se monto las carpetas virtualmente.
